@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.home{
+    height: 100vh;
+}
+.home-header{
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
+    position: static;
+    padding: 0 15px;
+}
+.logo h2{
+    font-size: 2rem;
+}
+.toggle-button{
+    position: absolute;
+    top: 1.7rem;
+    right: 1.2rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.bar{
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+.navigation ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+.navigation li{
+    padding: 0 40px;
+}
+.home-main{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+.home-main img{
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    margin-top: 25px;
+}
+.home-main button{
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.wrapper{
+    display: flex;
+}
+.static-txt{
+    font-size: 50px;
+}
+.dynamic-txt{
+    font-size: 60px;
+    margin-left: 1rem;
+    font-weight: 500;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+.dynamic-txt li{
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+}
+.dynamic-txt li::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid red;
+    background-color: white;
+    left: 0;
+    animation: typing 3s steps(10) infinite;
+}
+@keyframes typing{
+    40%,60%{
+        left:calc(100% + 30px)
+    }
+    100%{
+        left: 0;
+    }
+}
+@keyframes slide{
+    100%{
+        top: -360px;
+    }
+}
+                  /*  About Me */
+
+.about-me{
+    height: 100vh;
+}
+.about-me h2{
+    text-align: center;
+    height: 20%;
+    padding-top:20px ;
+    font-size: 50px;
+}
+.about-me-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+}
+.about-me-container img{
+    width:80%;
+    height: 80%;
+}
+.about-me-container p{
+    font-size: 20px;
+    margin-left: 3rem;
+}
+
+
+
+
+
+@media(max-width:800px){
+    .home{
+        position: relative;
+        width: 100vw;
+    }
+    .home-header{
+        flex-direction: column;
+        position: absolute;
+        z-index: 1;
+        background-color: white;
+        width: 100%;
+    }
+    .toggle-button{
+        display: flex;
+    }
+    .navigation{
+        display: none;
+    }
+    .navigation ul{
+        flex-direction: column;
+        height: 20vh;
+        width: 100%;
+    }
+    .navigation li{
+        padding: 5px 0;
+    }
+    .active{
+        display: flex;
+    }
+    .home-main img{
+        margin-top: 7rem;
+    }
+    .wrapper{
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-main button{
+        margin-top: 30px;
+    }
+
+    .about-me-container{
+        justify-content: center;
+        flex-direction: column;
+    }
+    .about-me-container img{
+        height: 60%;
+    }
+    .about-me-container p{
+        font-size: 15px;
+        margin: 15px 20px;
+    }
+}
+
+@media(max-width:1000px) and (orientation:landscape){
+    .home{
+        position: relative;
+        width: 100vw;
+        height: 150vh;
+    }
+    .home-header{
+        flex-direction: column;
+        position: absolute;
+        z-index: 1;
+        background-color: white;
+        width: 100%;
+    }
+    .logo{
+        height: 20vh;
+    }
+    .toggle-button{
+        display: flex;
+    }
+    .navigation{
+        display: none;
+    }
+    .navigation ul{
+        flex-direction: column;
+        height: 40vh;
+        width: 100vw;
+    }
+    .navigation li{
+        padding: 5px 0;
+    }
+    .active{
+        display: flex;
+    }
+    .home-main img{
+        height: 250px;
+        width: 250px;
+        margin-top: 100px;
+    }
+    .wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    .static-txt{
+        font-size: 30px;
+    }
+    .dynamic-txt{
+        font-size: 40px;
+    }
+    .about-me-container{
+        justify-content: center;
+        margin: 0 15px;
+    }
+    /* .about-me-container p{
+        margin-left: 0;
+    } */
+}
